@@ -1,0 +1,22 @@
+buildscript {
+    repositories {
+        maven { url "http://platform-acceleration-lab-maven.s3.amazonaws.com" }
+        jcenter()
+    }
+
+    dependencies {
+        classpath "io.pivotal.pal.assignments:assignments-plugin:4.0.0"
+    }
+}
+
+apply plugin: "io.pivotal.pal.assignments.plugin"
+
+assignments {
+    apiUrl = "https://perficient-waveland.education.pivotal.io"
+    emails = [
+       "rekha.kandasamy@perficient.com"
+    ]
+    cohortIdentifier = "pal-chennai"
+}
+
+defaultTasks "tasks"
